@@ -60,7 +60,7 @@ Idea and Makefile are borrowed from https://github.com/macdice/iqfeed-debian.
 apt-get install -y software-properties-common
 add-apt-repository -y ppa:ubuntu-wine/ppa
 apt-get update
-apt-get -y install wine1.7
+apt-get -y install wine1.8
 ```
 
 2. You need a GUI for this to work, so if you're doing it on server, [install vncserver](http://www.howtoforge.com/how-to-install-vnc-server-on-ubuntu-14.04).
