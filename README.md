@@ -85,8 +85,26 @@ apt-get -y install wine1.8
 
 You can run it now: `docker run -e LOGIN=login -e PASSWORD=password iqfeed`.
 
-For transferring image between machines, you can use http://hub.docker.com. For example, if your account on Docker Hub is "ncllc", you should run `docker build -t ncllc/iqfeed .`, then `docker push ncllc/iqfeed`. Then on the target machine, run `docker pull ncllc/iqfeed` and `docker run --net="host" ncllc/iqfeed`.
+Transferring Docker Image
+-------------------------
 
-For transferring images without using docker registry: you should run `docker build -t ncllc/iqfeed`, then `docker export ncllc/iqfeed > /desired-path-to-file/ncllc_iqfeed.tar`, then navigate to your desired path on target machine and run `rsync -avz --partial --progress machinelogin@hostname:/tmp/ncllc_iqfeed.tar .`. Load the image from the tar `docker load < /path-to-file/ncllc_iqfeed.tar`. Image should appear in registry `docker images`. Run the container `docker run -d --name feed -p 5009:5010 -p 9100:9101 ncllc/iqfeed`. Listen on the correct port `telnet localhost 9100`.
+For transferring images without using docker registry: 
+
+1. you should run `docker build -t ncllc/iqfeed`
+
+2. `docker export ncllc/iqfeed > /desired-path-to-file/ncllc_iqfeed.tar`
+
+3. then navigate to your desired path on target machine and run `rsync -avz --partial --progress machinelogin@hostname:/tmp/ncllc_iqfeed.tar .`. 
+
+4. Load the image from the tar `docker load < /path-to-file/ncllc_iqfeed.tar`. 
+
+5. Image should appear in registry `docker images`. 
+
+6. Run the container `docker run -d --name feed -p 5009:5010 -p 9100:9101 ncllc/iqfeed`. 
+
+7. Listen on the correct port `telnet localhost 9100`.
+
+
+For transferring image between machines using public registry:  you can use http://hub.docker.com. For example, if your account on Docker Hub is "ncllc", you should run `docker build -t ncllc/iqfeed .`, then `docker push ncllc/iqfeed`. Then on the target machine, run `docker pull ncllc/iqfeed` and `docker run --net="host" ncllc/iqfeed`.
 
 
