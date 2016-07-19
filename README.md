@@ -5,7 +5,7 @@ Usage
 -----
 
 ```
-docker run -e LOGIN=<your iqfeed login> -e PASSWORD=<your iqfeed password> -p 5009:5010 -p 9100:9101 bratchenko/iqfeed
+docker run -e LOGIN=<your iqfeed login> -e PASSWORD=<your iqfeed password> -p 5009:5010 -p 9100:9101 ncllc/iqfeed
 ```
 
 You should see out put like this:
@@ -63,7 +63,7 @@ apt-get update
 apt-get -y install wine1.8
 ```
 
-2. You need a GUI for this to work, so if you're doing it on server, [install vncserver](http://www.howtoforge.com/how-to-install-vnc-server-on-ubuntu-14.04). Alternatively if sshing into VM,[download Xquart](https://www.xquartz.org ) and continue below.  
+2. You need a GUI for this to work, so if you're doing it on server, [install vncserver](http://www.howtoforge.com/how-to-install-vnc-server-on-ubuntu-14.04). Alternatively, if sshing into VM, [download Xquart](https://www.xquartz.org ) and continue below.  
 
 3. Run `make fetch` in this folder to download IQFeed Client installation file. You can change IQFeed Client version at the top of Makefile.
 
@@ -85,4 +85,4 @@ apt-get -y install wine1.8
 
 You can run it now: `docker run -e LOGIN=login -e PASSWORD=password iqfeed`.
 
-For transferring image between machines, you can use http://hub.docker.com. For example, if your account on Docker Hub is "bratchenko", you should run `docker build -t bratchenko/iqfeed .`, then `docker push bratchenko/iqfeed`. Then on the target machine, run `docker pull bratchenko/iqfeed` and `docker run --net="host" bratchenko/iqfeed`.
+For transferring image between machines, you can use http://hub.docker.com. For example, if your account on Docker Hub is "ncllc", you should run `docker build -t ncllc/iqfeed .`, then `docker push ncllc/iqfeed`. Then on the target machine, run `docker pull ncllc/iqfeed` and `docker run --net="host" ncllc/iqfeed`.
