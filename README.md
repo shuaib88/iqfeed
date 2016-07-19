@@ -4,7 +4,7 @@ Dockerized IQFeed client
 Details
 -------
 
-This image runs an IQFeed client (version 5.1.1.0) using Ubuntu 14.04 and wine.
+This image runs an IQFeed client (version 5.2.3.0) using Ubuntu 16.04 and wine.
 
 It exposes IQFeed ports 5009 and 9100 as 5010 and 9101 correspondingly. Port change is because IQFeed listens on localhost and proxy embeded into container translates those ports to 5010 and 9101.
 
