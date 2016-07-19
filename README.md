@@ -63,7 +63,7 @@ apt-get update
 apt-get -y install wine1.8
 ```
 
-2. You need a GUI for this to work, so if you're doing it on server, [install vncserver](http://www.howtoforge.com/how-to-install-vnc-server-on-ubuntu-14.04). Alternatively, if sshing into VM, [download Xquart](https://www.xquartz.org ) and continue below.  
+2. You need a GUI for this to work, so if you're doing it on server, [install vncserver](http://www.howtoforge.com/how-to-install-vnc-server-on-ubuntu-14.04). Alternatively, if sshing into VM, [download Xquartz](https://www.xquartz.org ) and continue below.  
 
 3. Run `make fetch` in this folder to download IQFeed Client installation file. You can change IQFeed Client version at the top of Makefile.
 
